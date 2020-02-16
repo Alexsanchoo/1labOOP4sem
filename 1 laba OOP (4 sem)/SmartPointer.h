@@ -48,7 +48,7 @@ inline SmartPointer<T>::~SmartPointer()
 	if (smartPtr) {
 		smartPtr->counter--;
 		if (smartPtr->counter == 0) {
-			delete smartPtr->ptr;
+			delete[] smartPtr->ptr;
 			delete smartPtr;
 		}
 	}
@@ -60,7 +60,7 @@ inline SmartPointer<T>& SmartPointer<T>::operator=(const SmartPointer & obj)
 	if (smartPtr) {
 		smartPtr->counter--;
 		if (smartPtr->counter == 0) {
-			delete smartPtr->ptr;
+			delete[] smartPtr->ptr;
 			delete smartPtr;
 		}
 	}

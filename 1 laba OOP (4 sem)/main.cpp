@@ -14,6 +14,7 @@ int main()
 	SetConsoleCP(1251);
 	SetConsoleOutputCP(1251);
 
+	SmartPointer<double> salary = new double[3]{ -1.0, -1.0, -1.0 };
 	Transaction<Developer> developer;
 	Transaction<QAEngineer> engineer;
 	Transaction<ProjectManager> manager;
@@ -25,9 +26,9 @@ int main()
 		cout << "2. Заполнить данные QA-инженера;" << endl;
 		cout << "3. Заполнить данные менеджера проектом;" << endl;
 		cout << "4. Откат данных;" << endl;
-		cout << "5. Рассчитать зарплату для разработчика;" << endl;
-		cout << "6. Расситать зарплату для QA-инженера;" << endl;
-		cout << "7. Рассчитать зарплату для менеджера проектом;" << endl;
+		cout << "5. Рассчитать/вывести зарплату для разработчика;" << endl;
+		cout << "6. Расситать/вывести зарплату для QA-инженера;" << endl;
+		cout << "7. Рассчитать/вывести зарплату для менеджера проектом;" << endl;
 		cout << "8. Просмотр данных;" << endl;
 		cout << "9. Выход." << endl;
 		cout << "Сделайте выбор: "; 
