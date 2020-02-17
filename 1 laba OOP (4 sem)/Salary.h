@@ -23,6 +23,7 @@ public:
 	void set();
 	void get();
 	Salary& operator=(const Salary &obj);
+	double calculateSalary(double price = 0.0);
 
 private:
 	double tax;

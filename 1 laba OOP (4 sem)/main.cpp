@@ -1,4 +1,5 @@
 #include<iostream>
+#include<iomanip>
 #include<Windows.h>
 #include "Developer.h"
 #include "QAEngineer.h"
@@ -48,6 +49,7 @@ int main()
 				}
 			}
 			system("cls");
+			salary[0] = developer->salary.calculateSalary(developer->getPriceProj());
 			cout << "Данные обновлены!" << endl << endl;
 			break;
 
@@ -64,6 +66,7 @@ int main()
 				}
 			}
 			system("cls");
+			salary[1] = engineer->salary.calculateSalary(engineer->getPriceProj());
 			cout << "Данные обновлены!" << endl << endl;
 			break;
 
@@ -80,6 +83,7 @@ int main()
 				}
 			}
 			system("cls");
+			salary[2] = manager->salary.calculateSalary(manager->getPriceProj());
 			cout << "Данные обновлены!" << endl << endl;
 			break;
 
@@ -99,6 +103,12 @@ int main()
 					case 1:
 						system("cls");
 						developer.DeleteTransactions();
+						if (developer->salary.getBonus() != -1) {
+						salary[0] = developer->salary.calculateSalary(developer->getPriceProj());
+						}
+						else {
+							salary[0] = -1.0;
+						}
 						system("cls");
 						cout << "Данные успешно сброшены!" << endl << endl;
 						break;
@@ -106,6 +116,12 @@ int main()
 					case 2:
 						system("cls");
 						engineer.DeleteTransactions();
+						if (engineer->salary.getBonus() != -1) {
+						salary[1] = engineer->salary.calculateSalary(engineer->getPriceProj());
+						}
+						else {
+							salary[1] = -1.0;
+						}
 						system("cls");
 						cout << "Данные успешно сброшены!" << endl << endl;
 						break;
@@ -113,6 +129,12 @@ int main()
 					case 3:
 						system("cls");
 						manager.DeleteTransactions();
+						if (manager->salary.getBonus() != -1) {
+						salary[2] = manager->salary.calculateSalary(manager->getPriceProj());
+						}
+						else {
+							salary[2] = -1.0;
+						}
 						system("cls");
 						cout << "Данные успешно сброшены!" << endl << endl;
 						break;
@@ -131,14 +153,41 @@ int main()
 
 		case 5:
 			system("cls");
+			if (salary[0] != -1.0) {
+				
+				cout << fixed << setprecision(2) << "Заработная плата разработчика: " << salary[0] << "$" << endl;
+				system("pause>>void");
+				system("cls");
+			}
+			else {
+				cout << "Данные о разработчике ещё не добавлены." << endl << endl;
+			}
 			break;
 
 		case 6:
 			system("cls");
+			if (salary[1] != -1.0) {
+
+				cout << fixed << setprecision(2) << "Заработная плата QA-инженера: " << salary[1] << "$" << endl;
+				system("pause>>void");
+				system("cls");
+			}
+			else {
+				cout << "Данные о QA-инженере ещё не добавлены." << endl << endl;
+			}
 			break;
 
 		case 7:
 			system("cls");
+			if (salary[2] != -1.0) {
+
+				cout << fixed << setprecision(2) << "Заработная плата менеджера проекта: " << salary[2] << "$" << endl;
+				system("pause>>void");
+				system("cls");
+			}
+			else {
+				cout << "Данные о менеджере проекта ещё не добавлены." << endl << endl;
+			}
 			break;
 
 		case 8:

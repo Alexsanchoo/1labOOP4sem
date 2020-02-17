@@ -18,6 +18,9 @@ public:
 	~SmartPointer();
 	SmartPointer<T>& operator=(const SmartPointer &obj);
 	T* operator->() const;
+	T& operator[](int index) {
+		return smartPtr->ptr[index];
+	}
 
 private:
 	Status<T> *smartPtr;
